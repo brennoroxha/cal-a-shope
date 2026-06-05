@@ -1,0 +1,46 @@
+import { STORE_DATA } from '../data';
+
+interface StoreInfoProps {
+  onVisitarClick?: () => void;
+}
+
+export default function StoreInfo({ onVisitarClick }: StoreInfoProps) {
+  return (
+    <>
+      <section className="si">
+        <div className="si-row">
+          <div className="si-left">
+            <img
+              className="si-logo"
+              src={STORE_DATA.logo}
+              alt="OxeanJeans"
+              onError={(e) => {
+                const target = e.target as HTMLElement;
+                target.outerHTML = '<div class="si-logo-fallback">OJ</div>';
+              }}
+            />
+            <div className="si-info">
+              <div className="si-name-row">
+                <span className="si-name">{STORE_DATA.name}</span>
+                <svg width="17" height="17" viewBox="0 0 48 48">
+                  <polygon fill="hsl(211, 90%, 56%)" points="29.62,3 33.053,8.308 39.367,8.624 39.686,14.937 44.997,18.367 42.116,23.995 45,29.62 39.692,33.053 39.376,39.367 33.063,39.686 29.633,44.997 24.005,42.116 18.38,45 14.947,39.692 8.633,39.376 8.314,33.063 3.003,29.633 5.884,24.005 3,18.38 8.308,14.947 8.624,8.633 14.937,8.314 18.367,3.003 23.995,5.884" />
+                  <polygon fill="#fff" points="21.396,31.255 14.899,24.76 17.021,22.639 21.428,27.046 30.996,17.772 33.084,19.926" />
+                </svg>
+              </div>
+              <div className="flex items-center gap-2 text-[11px] text-zinc-500 mt-1">
+                <span><strong className="text-zinc-700 font-semibold">28,7mil</strong> Avaliações</span>
+                <span className="text-zinc-200">|</span>
+                <span><strong className="text-zinc-700 font-semibold">70mil+</strong> Vendidos</span>
+              </div>
+            </div>
+          </div>
+          <button className="si-visitar" type="button" id="btnVisitar" onClick={onVisitarClick}>
+            Visitar
+          </button>
+        </div>
+      </section>
+
+      <div className="sep"></div>
+    </>
+  );
+}

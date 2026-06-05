@@ -1,0 +1,8 @@
+{
+  "name": "Calça Legging Flare",
+  "description": "Página promocional da Calça Legging Flare Flanelada Leg Boca De Sino Bailarina Grossa Zero Transparência para o Mês do Consumidor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
